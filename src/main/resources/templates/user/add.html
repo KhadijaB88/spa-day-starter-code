@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th = "http://www.thymeleaf.org/">
+<head>
+    <meta charset="UTF-8">
+    <title>Add User Form</title>
+    <link href="../static/css/styles.css" th:href="@{/css/styles.css}" rel="stylesheet" />
+</head>
+<body>
+
+<form method = "post" th:action="@{/user}">
+    <label th:if="${error}">Passwords must match!</label>
+    <label>Username:</label>
+        <input type = "text" name = "username" th:value="${username}"/>
+
+    <label>Email:</label>
+        <input type = "email" name = "email" th:value="${email}"/>
+
+    <label>Password:</label>
+        <input type = "password" name = "password"/>
+
+    <label>Re-type Password:</label>
+        <input type = "password" name = "verify"/>
+
+    <input type = "submit" value = "Submit">
+</form>
+</body>
+</html>
